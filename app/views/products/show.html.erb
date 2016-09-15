@@ -8,7 +8,8 @@
 $(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.get("/products/" + nextId + "/data", function(data) {
+    $.get("/products/" + nextId + "/show", function(data) {
+      //changed "/data" to "/show" above
       $(".productName").text(data["name"]);
       $(".productPrice").text(data["price"]);
       $(".productDescription").text(data["description"]);
@@ -19,4 +20,3 @@ $(function () {
   });
 });
 </script>
-
